@@ -18,7 +18,7 @@ const Nav = () => {
   };
 
   return (
-    <nav>
+    <nav className="shadow-md">
       <div className="shadow-md w-full fixed top-0 left-0">
         <div className="md:flex md:items-center md:justify-between bg-white py-4 md:px-10 px-7">
           <div className="font-[Poppins] font-bold text-2xl cursor-pointer  flex items-center text-gray-800">
@@ -29,13 +29,13 @@ const Nav = () => {
           </div>
           <div
             onClick={handleClick}
-            className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+            className="text-3xl absolute right-8 top-5 cursor-pointer md:hidden"
             role="presentation"
           >
             {open ? <GrFormClose /> : <BiMenu />}
           </div>
           <ul
-            className={`md:flex md:items-center md:gap-10 font-[Poppins] md:pb-0 pb-16 absolute md:static bg-white md:z-auto z-[-1] top-0 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in border-  ${
+            className={`md:flex md:items-center md:gap-10 font-[Poppins] shadow-md md:shadow-none md:pb-0 pb-16 absolute md:static bg-white md:z-auto z-[-1] top-0 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in  ${
               open ? 'top-16' : 'top-[-400px]'
             }`}
           >
