@@ -2,11 +2,20 @@ import React, { useState } from 'react';
 import { BsFillRocketTakeoffFill } from 'react-icons/bs';
 import { BiMenu } from 'react-icons/bi';
 import { GrFormClose } from 'react-icons/gr';
-import Button from './Button';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleClick = () => setOpen(!open);
+  const loginClick = () => {
+    setOpen(!open);
+    navigate('/login');
+  };
+  const registerClick = () => {
+    setOpen(!open);
+    navigate('/register');
+  };
 
   return (
     <nav>
@@ -31,31 +40,28 @@ const Nav = () => {
             }`}
           >
             <li className="md:text-xl my-7 md:my-0">
-              <a
+              <Link
+                onClick={() => setOpen(!open)}
+                to="/"
                 className="text-gray-700 hover:text-gray-400 duration-500"
-                href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
-            <li className="md:text-xl my-7 md:my-0">
-              <a
-                className="text-gray-700 hover:text-gray-400 duration-500"
-                href="/about"
-              >
-                About
-              </a>
-            </li>
-            <li className="md:text-xl my-7 md:my-0">
-              <a
-                className="text-gray-700 hover:text-gray-400 duration-500"
-                href="/service"
-              >
-                Service
-              </a>
-            </li>
-            <Button>Login</Button>
-            <Button>Sign up</Button>
+            <button
+              onClick={() => loginClick()}
+              className="bg-indigo-600 hover:bg-indigo-500 duration-150 px-4 py-2 font-[Poppins] text-white text-md md:text-xl rounded-md block mb-5 md:mb-0"
+              type="button"
+            >
+              Login
+            </button>
+            <button
+              onClick={() => registerClick()}
+              className="bg-indigo-600 hover:bg-indigo-500 duration-150 px-4 py-2 font-[Poppins] text-white text-md md:text-xl rounded-md block mb-5 md:mb-0"
+              type="button"
+            >
+              Sign up
+            </button>
           </ul>
         </div>
       </div>
