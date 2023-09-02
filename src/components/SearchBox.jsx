@@ -24,7 +24,6 @@ const SearchBox = () => {
       value: 'nepal',
     },
   ];
-
   const statusItem = [
     {
       id: 1,
@@ -52,6 +51,37 @@ const SearchBox = () => {
       value: 'example3',
     },
   ];
+  const reviewItem = [
+    {
+      id: 1,
+      name: 'Reviewed',
+      value: 'reviewed',
+    },
+    {
+      id: 2,
+      name: 'Pending',
+      value: 'pending',
+    },
+    {
+      id: 3,
+      name: 'Approved',
+      value: 'approved',
+    },
+    {
+      id: 4,
+      name: 'Rejected',
+      value: 'rejected',
+    },
+    {
+      id: 5,
+      name: 'In Progress',
+      value: 'in_progress',
+    },
+  ];
+
+  const TYPES = 'Types';
+  const STATUS = 'Status';
+  const REVIEW = 'Review';
 
   return (
     <div className="md:py-6 py-2 px-8 bg-red-500">
@@ -59,8 +89,9 @@ const SearchBox = () => {
         Search Capsule
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <DropDown data={typesItem} filterBy="Types" />
-        <DropDown data={statusItem} filterBy="Status" />
+        <DropDown data={typesItem} filterBy={TYPES} />
+        <DropDown data={statusItem} filterBy={STATUS} />
+        <DropDown data={reviewItem} filterBy={REVIEW} />
       </div>
     </div>
   );
