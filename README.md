@@ -2,6 +2,10 @@
 
 This project was given by BrainstormForce.
 
+## Demo:
+
+https://youtu.be/H-NeCxP1k-c
+
 ## Features:
 
 - Functional Filtering
@@ -12,10 +16,8 @@ This project was given by BrainstormForce.
 
 https://github.com/siam-craft/Siam-Frontend-Developer
 
-## Demo:
-
-https://youtu.be/H-NeCxP1k-c
-
 ### Open Projecr
 
 `git clone https://github.com/siam-craft/Siam-Frontend-Developer`
+
+I will make everything private after the result. Thanks.
