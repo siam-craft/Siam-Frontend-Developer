@@ -97,7 +97,7 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="md:py-6 py-2 px-8 bg-red-500">
+    <div className="md:py-6 py-2 px-8 ">
       <h2 className="text-center md:text-4xl text-2xl font-[Poppins] font-medium text-slate-900 mb-1 md:mb-3">
         Search Capsule
       </h2>
@@ -108,7 +108,7 @@ const SearchBox = () => {
         <div>
           <button
             onClick={sendRequest}
-            className="bg-white w-full px-8 py-5 block"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition-all duration-300 ease-in-out"
             type="button"
           >
             Search

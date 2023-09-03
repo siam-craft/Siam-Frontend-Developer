@@ -18,7 +18,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="shadow-md">
+    <nav className="shadow-md relative z-20">
       <div className="shadow-md w-full fixed top-0 left-0">
         <div className="md:flex md:items-center md:justify-between bg-white py-4 md:px-10 px-7">
           <div className="font-[Poppins] font-bold text-2xl cursor-pointer  flex items-center text-gray-800">
