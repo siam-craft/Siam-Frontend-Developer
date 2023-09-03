@@ -25,7 +25,7 @@ const Nav = () => {
             <span className="text-3xl text-indigo-600 mr-1 ">
               <BsFillRocketTakeoffFill />
             </span>
-            Designer
+            Rocket
           </div>
           <div
             onClick={handleClick}
