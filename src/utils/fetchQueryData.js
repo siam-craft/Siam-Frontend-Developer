@@ -9,9 +9,12 @@ const fetchQueryData = async (result) => {
           status: {
             $eq: result.status.toLowerCase(),
           },
-          water_landings: {
-            $eq: 1,
+          type: {
+            $eq: result.type && result.type,
           },
+          // water_landings: {
+          //   $eq: (result.waterLanding && Math.floor(result.waterLanding)) || 0,
+          // },
         },
         options: {
           limit: 9, // Adjust the limit as needed

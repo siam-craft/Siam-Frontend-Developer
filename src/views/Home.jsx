@@ -1,15 +1,22 @@
 import React from 'react';
+
+import { useSelector } from 'react-redux';
 import SearchBox from '../components/SearchBox';
 import AllCapsules from '../components/AllCapsules';
 import Banner from '../components/Banner';
+import FilterResult from '../components/FilterResult';
 
-const Home = () => (
-  <>
-    {/* <div className="bg-indigo-600 px-10 py-9 h-[30vh]  w-full" /> */}
-    <Banner />
-    <SearchBox />
-    <AllCapsules />
-  </>
-);
+const Home = () => {
+  const data = useSelector((state) => state.queryresult.data);
+  console.log(data);
+
+  return (
+    <>
+      <Banner />
+      <SearchBox />
+      {data ? <FilterResult /> : <AllCapsules />}
+    </>
+  );
+};
 
 export default Home;
