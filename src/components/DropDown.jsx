@@ -23,7 +23,7 @@ const DropDown = ({ data, filterBy }) => {
   };
 
   return (
-    <div>
+    <div className="relative">
       <div
         className="bg-slate- text-slate-800. font-[Poppins] py-5 font-semibold px-1 bg-slate-100 hover:cursor-pointer"
         onClick={() => {
@@ -33,15 +33,13 @@ const DropDown = ({ data, filterBy }) => {
       >
         {filterBy}
       </div>
-
       <ul>
         <li className="px-1 py-3  border-b-[1px] border-rose-100">
           {dorpdownItem || 'Select a item'}
         </li>
       </ul>
-
       {dropdownStatus ? (
-        <ul className="mt-2 bg-rose-50 max-h-28 overflow-y-auto">
+        <ul className="mt-2 bg-rose-50 max-h-48 overflow-y-auto absolute w-full">
           <hr />
           {data.map((list) => (
             <li
