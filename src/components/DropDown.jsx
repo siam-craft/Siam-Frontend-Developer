@@ -7,10 +7,12 @@ import {
 } from '../app/features/dropdown/dropdownSlice';
 
 const DropDown = ({ data, filterBy }) => {
+  // console.log(filterBy);
   const dispatch = useDispatch();
   const dropdownStatus = useSelector(
     (state) => state.dropdown[filterBy.toLowerCase()].openDropdownStatus,
   );
+
   const dropdownItemValue = useSelector(
     (state) => state.dropdown[filterBy.toLowerCase()].dropdownItemValue,
   );

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   filterName: '',
-  types: {
+  type: {
     openDropdownStatus: false,
     dropdownItemValue: '',
   },
@@ -10,7 +10,7 @@ const initialState = {
     openDropdownStatus: false,
     dropdownItemValue: '',
   },
-  review: {
+  waterlanding: {
     openDropdownStatus: false,
     dropdownItemValue: '',
   },

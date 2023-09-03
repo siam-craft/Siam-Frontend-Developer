@@ -1,99 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import DropDown from './DropDown';
-import sendStatus from '../utils/sendRequestStatus';
+import createQuery from '../utils/createQuery';
+import { STATUS, TYPE, WATERLANDING } from '../data/static';
+import { fetchData } from '../app/features/queryresult/queryresult';
 
 const SearchBox = () => {
+  const dispatch = useDispatch();
   const data = useSelector((state) => state.dropdown);
 
-  const typesItem = [
-    {
-      id: 1,
-      name: 'Bangladesh',
-      value: 'bangladesh',
-    },
-    {
-      id: 2,
-      name: 'India',
-      value: 'india',
-    },
-    {
-      id: 3,
-      name: 'Pakistan',
-      value: 'pakistan',
-    },
-    {
-      id: 4,
-      name: 'Nepal',
-      value: 'nepal',
-    },
-  ];
-  const statusItem = [
-    {
-      id: 1,
-      name: 'Active',
-      value: 'active',
-    },
-    {
-      id: 2,
-      name: 'Unused',
-      value: 'unused',
-    },
-    {
-      id: 3,
-      name: 'Example 1',
-      value: 'example1',
-    },
-    {
-      id: 4,
-      name: 'Example 2',
-      value: 'example2',
-    },
-    {
-      id: 5,
-      name: 'Example 3',
-      value: 'example3',
-    },
-  ];
-  const reviewItem = [
-    {
-      id: 1,
-      name: 'Reviewed',
-      value: 'reviewed',
-    },
-    {
-      id: 2,
-      name: 'Pending',
-      value: 'pending',
-    },
-    {
-      id: 3,
-      name: 'Approved',
-      value: 'approved',
-    },
-    {
-      id: 4,
-      name: 'Rejected',
-      value: 'rejected',
-    },
-    {
-      id: 5,
-      name: 'In Progress',
-      value: 'in_progress',
-    },
-  ];
+  const status = 'Status';
+  const type = 'Type';
+  const waterLanding = 'WaterLanding';
 
-  const TYPES = 'Types';
-  const STATUS = 'Status';
-  const REVIEW = 'Review';
-  const arr = Object.keys(data);
-
-  const sendRequest = () => {
-    if (sendStatus(arr, data)) {
-      console.log('send');
-    } else {
-      console.log('reject');
-    }
+  const sendRequest = async () => {
+    const result = createQuery(data);
+    dispatch(fetchData(result));
   };
 
   return (
@@ -102,9 +24,9 @@ const SearchBox = () => {
         Search Capsule
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-        <DropDown data={typesItem} filterBy={TYPES} />
-        <DropDown data={statusItem} filterBy={STATUS} />
-        <DropDown data={reviewItem} filterBy={REVIEW} />
+        <DropDown data={TYPE} filterBy={type} />
+        <DropDown data={STATUS} filterBy={status} />
+        <DropDown data={WATERLANDING} filterBy={waterLanding} />
         <div>
           <button
             onClick={sendRequest}

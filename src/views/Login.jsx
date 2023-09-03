@@ -1,39 +1,9 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Login = () => {
-  const fetchData = async () => {
-    try {
-      const res = await axios.post(
-        'https://api.spacexdata.com/v4/capsules/query',
-        {
-          query: {
-            // status: {
-            //   $eq: 'retired',
-            // },
-            water_landings: {
-              $gt: 1,
-            },
-          },
-          options: {
-            limit: 9, // Adjust the limit as needed
-            page: 1, // Adjust the page number as needed
-          },
-        },
-      );
-      // Handle the response data here
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      // Handle any errors here
-      console.error('Error fetching data:', error);
-    }
-    return 'ok';
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const data = useSelector((state) => state.queryresult);
+  console.log(data?.data?.docs);
   return <div>Login</div>;
 };
 
